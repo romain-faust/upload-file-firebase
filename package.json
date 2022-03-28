@@ -1,0 +1,47 @@
+{
+	"author": {
+		"email": "romain.faust@gmail.com",
+		"name": "Romain Faust"
+	},
+	"devDependencies": {
+		"@romain-faust/prettier-config": "~2.4.0",
+		"@romain-faust/upload-file": "~1.0.1",
+		"@types/jest": "~27.4.1",
+		"dotenv": "~16.0.0",
+		"firebase": "~9.6.10",
+		"husky": "~7.0.4",
+		"jest": "~27.5.1",
+		"lint-staged": "~12.3.7",
+		"prettier": "~2.6.1",
+		"rxjs": "~7.5.5",
+		"ts-jest": "~27.1.4",
+		"typescript": "~4.6.3"
+	},
+	"files": [
+		"build/",
+		"changelog.md",
+		"license.md",
+		"package.json",
+		"readme.md"
+	],
+	"license": "MIT",
+	"main": "build/index.js",
+	"name": "@romain-faust/upload-file-firebase",
+	"peerDependencies": {
+		"@romain-faust/upload-file": "^1.0.1",
+		"firebase": "^9.6.10",
+		"rxjs": "^7.5.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/romain-faust/upload-file-firebase"
+	},
+	"scripts": {
+		"build": "tsc",
+		"test": "jest",
+		"test:coverage": "yarn test --coverage",
+		"typecheck": "yarn build --noEmit"
+	},
+	"types": "build/index.d.ts",
+	"version": "1.0.0"
+}

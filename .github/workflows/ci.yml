@@ -1,0 +1,35 @@
+name: CI ⚙️
+
+on:
+    push:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            - name: Setup Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16.x
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+            - name: Test (with coverage)
+              run: yarn test:coverage
+              env:
+                  TEST_STORAGE_BUCKET: ${{ secrets.TEST_STORAGE_BUCKET }}
+
+    typecheck:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            - name: Setup Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16.x
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+            - name: Typecheck
+              run: yarn typecheck

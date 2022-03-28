@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"importsNotUsedAsValues": "error",
+		"lib": ["DOM", "ES2021"],
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"newLine": "LF",
+		"noEmitOnError": true,
+		"noErrorTruncation": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "build",
+		"pretty": true,
+		"strict": true,
+		"target": "ES5",
+		"types": []
+	},
+
+	"include": ["sources"],
+	"exclude": ["**/*.test.ts"]
+}
