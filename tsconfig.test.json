@@ -2,7 +2,8 @@
 	"extends": ".",
 
 	"compilerOptions": {
-		"types": ["jest"]
+		"strictNullChecks": false,
+		"types": ["jest", "node"]
 	},
 
 	"exclude": []
