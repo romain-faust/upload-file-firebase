@@ -1,4 +1,11 @@
-import type { UploadFile } from '@romain-faust/upload-file'
+import {
+	NotFoundError,
+	QuotaError,
+	UnauthenticatedError,
+	UnauthorizedError,
+	UnknownError,
+} from '@romain-faust/errors'
+import type { UploadFile, UploadFileSnapshot } from '@romain-faust/upload-file'
 import {
 	type FirebaseStorage,
 	getDownloadURL,
@@ -6,11 +13,11 @@ import {
 	uploadBytesResumable,
 	type UploadTaskSnapshot,
 } from 'firebase/storage'
-import { concat, defer, map, Observable } from 'rxjs'
+import { catchError, concat, defer, map, Observable, throwError } from 'rxjs'
 
 export function buildUploadFile(storage: FirebaseStorage): UploadFile {
 	return function uploadFile(path, data) {
-		return new Observable((subscriber) => {
+		return new Observable<UploadFileSnapshot>((subscriber) => {
 			const fileRef = ref(storage, path)
 			const task = uploadBytesResumable(fileRef, data)
 
@@ -39,6 +46,21 @@ export function buildUploadFile(storage: FirebaseStorage): UploadFile {
 			)
 
 			return concat(progress$, downloadURL$).subscribe(subscriber)
-		})
+		}).pipe(
+			catchError((error) => {
+				switch (error.code) {
+					case 'storage/object-not-found':
+						return throwError(() => new NotFoundError())
+					case 'storage/quota-exceeded':
+						return throwError(() => new QuotaError())
+					case 'storage/unauthenticated':
+						return throwError(() => new UnauthenticatedError())
+					case 'storage/unauthorized':
+						return throwError(() => new UnauthorizedError())
+				}
+
+				return throwError(() => new UnknownError(error))
+			}),
+		)
 	}
 }

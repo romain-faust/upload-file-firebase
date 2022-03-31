@@ -7,5 +7,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 -   Add missing build step in `publish.yml`
+-   Use `@romain-faust/errors` to transform Firebase errors
 
 ## [1.0.0] - 2022-03-30
