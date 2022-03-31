@@ -932,10 +932,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@romain-faust/errors@~1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@romain-faust/errors/-/errors-1.0.4.tgz#6b29ded7fc51479f4259116b33c44ab72f6b5dee"
-  integrity sha512-Q6I+meCKcyejrPXKfcWAYAOXHs7fr0z9Y5T6ebNHdhjqDcTKr7VMXQ+9xBVUPLSITivnuE/x06MSW/36g2ZpVA==
+"@romain-faust/errors@~1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@romain-faust/errors/-/errors-1.0.5.tgz#19851ed84e9c6c8c2294ae6b3bcbe4a98de67dff"
+  integrity sha512-RlCez1+DJvztaZh4rN9zxd9FYM5EH4x3gYz2dQwKt5kgYDmKLa0pbn0BbsxpRvfUMnD848yEfAXrZ9pPOwf4sg==
 
 "@romain-faust/prettier-config@~2.4.0":
   version "2.4.0"
