@@ -25,6 +25,8 @@ jobs:
               run: yarn test
               env:
                   TEST_STORAGE_BUCKET: ${{ secrets.TEST_STORAGE_BUCKET }}
+            - name: Build
+              run: yarn build
             - name: Publish to NPM registry
               run: yarn publish --access public
               env:
