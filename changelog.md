@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 -   Update `@romain-faust/errors` to `1.0.4`
+-   Pass the error directly to the `done` function
 
 ## [1.0.1] - 2022-03-31
 

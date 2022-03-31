@@ -31,7 +31,7 @@ describe('uploadFile()', () => {
 		uploadFile(FILE_PATH, FILE_DATA).subscribe({
 			next: nextSpy,
 			error: (error) => {
-				done(error.message)
+				done(error)
 			},
 			complete: () => {
 				expect(nextSpy).toHaveBeenNthCalledWith(
@@ -60,7 +60,7 @@ describe('uploadFile()', () => {
 		uploadFile(FILE_PATH, FILE_DATA).subscribe({
 			next: nextSpy,
 			error: (error) => {
-				done(error.message)
+				done(error)
 			},
 			complete: () => {
 				expect(nextSpy).toHaveBeenLastCalledWith(
